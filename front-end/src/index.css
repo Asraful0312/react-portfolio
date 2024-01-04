@@ -6,9 +6,10 @@
 @layer base {
   html {
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
   }
 }
 
-body{
+body {
   background-color: rgb(238, 238, 238);
 }

@@ -1,25 +1,24 @@
-import { Link, NavLink } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
 
-export const Header = () => {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const links = [
     {
-      to: "/about",
+      to: "#about",
       text: "About",
     },
     {
-      to: "/experience",
+      to: "#experience",
       text: "Experience",
     },
     {
-      to: "/projects",
+      to: "#projects",
       text: "Projects",
     },
     {
-      to: "/contact",
+      to: "#contact",
       text: "Contact",
     },
   ];
@@ -27,9 +26,9 @@ export const Header = () => {
   return (
     <header className="md:flex w-10/12 mx-auto py-3 md:items-center md:justify-between">
       <div>
-        <Link className="text-2xl" to="/">
+        <a href="#" className="text-2xl">
           Asraful Islam
-        </Link>
+        </a>
       </div>
       <div>
         <ul
@@ -46,14 +45,14 @@ export const Header = () => {
                 open ? "" : "hidden"
               }`}
             >
-              <NavLink
-                to={link?.to}
+              <a
+                href={link?.to}
                 className={({ isActive }) =>
                   isActive ? "text-gray-500" : "text-black"
                 }
               >
                 {link?.text}
-              </NavLink>
+              </a>
             </li>
           ))}
         </ul>
@@ -61,3 +60,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

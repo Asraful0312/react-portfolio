@@ -1,6 +1,5 @@
-import cv from "../assets/cv.pdf";
+import cv from "../../assets/cv.pdf";
 const CV_URL = `http://localhost:5173/${cv}`;
-import { Link } from "react-router-dom";
 
 const DownloadButton = ({ download, text, text2 }) => {
   const handleDownload = (url) => {
@@ -26,11 +25,11 @@ const DownloadButton = ({ download, text, text2 }) => {
           {text}
         </button>
       )}
-      <Link to="/contact">
+      <a to="#contact">
         <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border-2 border-black">
           {text2}
         </button>
-      </Link>
+      </a>
     </div>
   );
 };
