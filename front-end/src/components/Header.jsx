@@ -36,14 +36,14 @@ export const Header = () => {
           className={`flex md:flex-row absolute md:static right-10 z-40 md:mt-0 -mt-6 flex-col items-end md:gap-5 gap-2`}
         >
           <div onClick={() => setOpen(!open)} className="text-xl md:hidden">
-            {open ? <AiOutlineMenu /> : <RxCross2 />}
+            {open ? <RxCross2 /> : <AiOutlineMenu />}
           </div>
 
           {links.map((link) => (
             <li
               key={link.text}
               className={`text-lg transition-all duration-300 md:flex  ${
-                open ? "hidden" : ""
+                open ? "" : "hidden"
               }`}
             >
               <NavLink

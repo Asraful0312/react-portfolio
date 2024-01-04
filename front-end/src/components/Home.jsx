@@ -1,10 +1,12 @@
 import { Hero } from "./Hero";
-import {About} from "./About"
+import { About } from "./About"
+import { Experience } from "./Experience";
 export const Home = () => {
   return (
     <div>
       <Hero />
-      <About/>
+      <About />
+      <Experience />
     </div>
   );
 };
