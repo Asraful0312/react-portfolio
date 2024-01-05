@@ -23,7 +23,7 @@ const links = [
 const Contact = () => {
   return (
     <section className="h-screen flex items-center justify-center">
-      <div id="#contact" className="container ">
+      <div id="contact" className="container ">
         <Heading description="Get In Touch" title="Contact Me" />
         <EmailInput />
         <footer className="mt-[150px] md:mt-[160px] flex flex-col gap-3 lg:mt-[160px] xl:mt-[220px]">

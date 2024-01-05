@@ -1,8 +1,8 @@
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 
-export const ExperienceCard = ({lan, status}) => {
+export const ExperienceCard = ({ lan, status }) => {
   return (
-    <div className="flex items-center justify-center gap-3 w-1/2">
+    <div className="flex items-center justify-center gap-3 w-full md:w-1/2">
       <div className="w-1/2 flex gap-4">
         <div>
           <RiVerifiedBadgeFill className="text-3xl" />

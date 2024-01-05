@@ -37,15 +37,15 @@ const backendExp = [
 
 const Experience = () => {
   return (
-    <section className="container">
-      <div id="experience" className="min-h-[80vh] md:h-full mt-16">
+    <section className="container w-full">
+      <div id="experience" className="min-h-[80vh] md:h-full w-full mt-16">
         <Heading description="Explore My" title="Experience" />
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-          <div className="w-1/2 border-2 border-black rounded-xl p-6">
+          <div className="w-[90%] mx-auto md:w-1/2 border-2 border-black rounded-xl p-6">
             <h1 className="text-lg md:text-3xl text-bold pb-2 text-gray-600 text-center">
               Frontend Development
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:mt-5">
+            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 items-center gap-4 md:mt-5">
               {frontEndExp.map((item) => {
                 return (
                   <ExperienceCard
@@ -57,11 +57,11 @@ const Experience = () => {
               })}
             </div>
           </div>
-          <div className="w-1/2 border-2 border-black rounded-xl p-6">
+          <div className="w-[90%] mx-auto md:w-1/2 border-2 border-black rounded-xl p-6">
             <h1 className="text-lg md:text-3xl text-bold pb-2 text-gray-600 text-center">
               Backend Development
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 items-center gap-4 md:mt-5">
               {backendExp.map((item) => {
                 return (
                   <ExperienceCard

@@ -1,8 +1,7 @@
 import { PopoverComponent } from "./PopoverComponent";
 const ProjectCard = ({ image, description, name }) => {
-
   return (
-    <div className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[30%] xl:w-[30%] px-4 mb-4">
+    <div className="w-full sm:w-[80%] md:w-[50%] lg:w-[30%] xl:w-[30%] px-4 mb-4">
       <div className="bg-transparent border-2 border-black p-4 rounded-2xl">
         <div className="flex items-center justify-center flex-col">
           <div className="w-full h-[210px] rounded-2xl">
@@ -23,7 +22,7 @@ const ProjectCard = ({ image, description, name }) => {
                 Github
               </button>
             </a>
-            <PopoverComponent description={ description} />
+            <PopoverComponent description={description} />
           </div>
         </div>
       </div>

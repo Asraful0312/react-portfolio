@@ -17,7 +17,7 @@ const About = () => {
               alt="man"
             />
           </div>
-          <div className="w-8/12">
+          <div className="w-[90%] md:w-8/12">
             <div className="flex flex-col items-center gap-5 md:flex-row">
               <AboutItem
                 icon={<GiAchievement className="text-2xl" />}
