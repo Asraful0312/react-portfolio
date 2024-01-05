@@ -33,7 +33,7 @@ const Header = () => {
         </div>
         <div>
           <ul
-            className={`flex md:flex-row absolute md:static right-10 z-40 md:mt-0 -mt-6 flex-col items-end md:gap-5 gap-2`}
+            className={`flex nav p-3 md:flex-row absolute md:static right-10 z-40 md:mt-0 -mt-[38px] flex-col items-end md:gap-5 gap-2`}
           >
             <div onClick={() => setOpen(!open)} className="text-xl md:hidden">
               {open ? <RxCross2 /> : <AiOutlineMenu />}

@@ -15,6 +15,7 @@
 body {
   background-color: rgb(238, 238, 238);
 }
-.header {
+.header,
+.nav {
   background-color: rgb(238, 238, 238);
 }
