@@ -24,7 +24,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="md:flex w-10/12 mx-auto py-3 md:items-center md:justify-between">
+    <header className="md:flex px-10 py-3 md:items-center md:justify-between">
       <div>
         <a href="#" className="text-2xl">
           Asraful Islam
