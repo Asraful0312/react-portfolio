@@ -6,6 +6,10 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const links = [
     {
+      to: "#",
+      text: "Home",
+    },
+    {
       to: "#about",
       text: "About",
     },
@@ -25,26 +29,28 @@ const Header = () => {
 
   return (
     <section className="fixed w-full md:w-full header right-0 left-0 top-0">
-      <header className="md:flex px-10 py-3 md:items-center md:justify-between">
-        <div>
-          <a href="#" className="text-2xl">
-            Asraful Islam
-          </a>
+      <header className="md:w-[80%] 2xl:w-[55%] xl:w-[70%] md:mx-auto md:flex px-10 py-3 md:items-center md:justify-between">
+        <div className="flex items-center  sm:justify-between justify-end">
+          <div className="hidden sm:block">
+            <a href="#" className="text-lg md:text-lg lg:text-2xl">
+              ASRAFUL
+            </a>
+          </div>
+          <div onClick={() => setOpen(!open)} className="text-xl md:hidden">
+            {open ? <RxCross2 /> : <AiOutlineMenu />}
+          </div>
         </div>
         <div>
           <ul
-            className={`flex nav p-3 md:flex-row absolute md:static right-10 z-40 md:mt-0 -mt-[38px] flex-col items-end md:gap-5 gap-2`}
+            className={`flex nav bg-white h-screen md:h-0 md:flex-row w-full absolute md:static right-0 z-[9999] md:mt-0 flex-col items-center md:flex md:gap-5 gap-8 ${
+              open ? "" : "hidden"
+            }`}
           >
-            <div onClick={() => setOpen(!open)} className="text-xl md:hidden">
-              {open ? <RxCross2 /> : <AiOutlineMenu />}
-            </div>
-
             {links.map((link) => (
               <li
+                onClick={() => setOpen(false)}
                 key={link.text}
-                className={`text-lg transition-all duration-300 md:flex  ${
-                  open ? "" : "hidden"
-                }`}
+                className={`text-xl md:text-lg lg:text-xl hover:underline hover:text-gray-500 transition-all duration-300 md:flex}`}
               >
                 <a
                   href={link?.to}

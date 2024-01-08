@@ -37,11 +37,11 @@ const backendExp = [
 
 const Experience = () => {
   return (
-    <section className="container w-full">
-      <div id="experience" className="min-h-[80vh] md:h-full w-full mt-16">
+    <section className="container pb-[80px] md:pb-[150px] w-full">
+      <div id="experience" className="w-full md:w-[90%] md:mx-auto mt-16">
         <Heading description="Explore My" title="Experience" />
         <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-          <div className="w-[90%] mx-auto md:w-1/2 border-2 border-black rounded-xl p-6">
+          <div className="w-[90%] mx-auto md:w-1/2 border border-black rounded-2xl p-6">
             <h1 className="text-lg md:text-3xl text-bold pb-2 text-gray-600 text-center">
               Frontend Development
             </h1>
@@ -57,7 +57,7 @@ const Experience = () => {
               })}
             </div>
           </div>
-          <div className="w-[90%] mx-auto md:w-1/2 border-2 border-black rounded-xl p-6">
+          <div className="w-[90%] mx-auto md:w-1/2 border border-black rounded-2xl p-6">
             <h1 className="text-lg md:text-3xl text-bold pb-2 text-gray-600 text-center">
               Backend Development
             </h1>

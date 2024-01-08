@@ -30,8 +30,8 @@ const projectDetails = [
 
 const Projects = () => {
   return (
-    <section className="container mt-16 w-full">
-      <div id="projects" className="min-h-[80vh]">
+    <section className="container pb-[150px] mt-16 w-full">
+      <div id="projects" className="">
         <Heading description="Browse My Recent" title="Projects" />
         <div className="flex flex-wrap w-full items-center justify-center">
           {projectDetails.map((item) => {

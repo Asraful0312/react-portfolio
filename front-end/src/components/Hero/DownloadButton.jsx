@@ -1,5 +1,5 @@
 import cv from "../../assets/cv.pdf";
-const CV_URL = `http://localhost:5173/${cv}`;
+const CV_URL = `${cv}`;
 
 const DownloadButton = ({ download, text, text2 }) => {
   const handleDownload = (url) => {
@@ -15,18 +15,18 @@ const DownloadButton = ({ download, text, text2 }) => {
     <div className="flex items-center gap-2">
       {download ? (
         <button
-          className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border-2 border-black"
+          className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border border-black"
           onClick={() => handleDownload(CV_URL)}
         >
           {text}
         </button>
       ) : (
-        <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border-2 border-black">
+        <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border border-black">
           {text}
         </button>
       )}
-      <a to="#contact">
-        <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border-2 border-black">
+      <a href="#contact">
+        <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent p-2 rounded-lg border border-black">
           {text2}
         </button>
       </a>

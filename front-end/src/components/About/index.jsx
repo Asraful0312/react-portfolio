@@ -6,8 +6,8 @@ import AboutItem from "./AboutItem";
 
 const About = () => {
   return (
-    <section className="container">
-      <div id="about" className="mt-16 md:mt-0 min-h-[70vh]">
+    <section className="container pb-[80px] md:pb-[150px]">
+      <div id="about" className="mt-16 md:w-[90%] md:mx-auto md:mt-0">
         <Heading description="Get To Know More" title="About Me" />
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="w-[300px] md:w-1/3  h-[330px]">
@@ -28,7 +28,7 @@ const About = () => {
               <AboutItem
                 icon={<IoPeople className="text-2xl" />}
                 title={"Education"}
-                years={2}
+                edu={"HSC"}
                 description={"Higher Secondary School Certificate"}
               />
             </div>

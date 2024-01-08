@@ -4,9 +4,9 @@ import DownloadButton from "./DownloadButton";
 
 const Hero = () => {
   return (
-    <section className="container">
-      <div id="#" className="h-screen flex items-center justify-center">
-        <div className="flex gap-5 flex-col md:flex-row items-center md:gap-16">
+    <section className="container  py-[80px]  md:py-[150px]">
+      <div id="#" className=" flex items-center justify-center">
+        <div className="flex gap-5 flex-col md:flex-row items-center md:gap-10">
           <div className="w-[300px] xl:w-[450px] xl:h-[450px] h-[300px] overflow-hidden rounded-full shadow-sm">
             <img
               src={image}
