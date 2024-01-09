@@ -1,5 +1,6 @@
-import { PopoverComponent } from "./PopoverComponent";
-const ProjectCard = ({ image, description, name }) => {
+import { Link, useNavigate } from "react-router-dom";
+
+const ProjectCard = ({ image, description, name, id }) => {
   return (
     <div className="w-full sm:w-[80%] md:w-[50%] lg:w-[30%] xl:w-[30%] px-4 mb-4">
       <div className="bg-transparent border border-black p-4 rounded-3xl">
@@ -22,7 +23,12 @@ const ProjectCard = ({ image, description, name }) => {
                 Github
               </button>
             </a>
-            <PopoverComponent description={description} />
+            <Link
+              to={`/project/${id}`}
+              className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent py-2 px-5 rounded-xl border border-black"
+            >
+              Details
+            </Link>
           </div>
         </div>
       </div>

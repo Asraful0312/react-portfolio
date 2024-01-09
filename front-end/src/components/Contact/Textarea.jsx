@@ -1,10 +1,10 @@
 "use client";
 import { Textarea } from "keep-react";
 
-export const TextAreaComponent = ({onChange}) => {
+export const TextAreaComponent = ({ onChange }) => {
   return (
     <Textarea
-      className="w-10/12"
+      className="w-10/12 bg-transparent"
       onChange={onChange}
       id="comment"
       placeholder="Leave a comment..."

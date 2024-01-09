@@ -14,9 +14,7 @@ export const PopoverComponent = ({ description }) => {
         </a>
       </Popover.Container>
       <Popover.Action>
-        <button className="text-sm hover:bg-black hover:text-white transition-colors duration-300 bg-transparent py-2 px-5 rounded-xl border border-black">
-          Details
-        </button>
+       
       </Popover.Action>
     </Popover>
   );
