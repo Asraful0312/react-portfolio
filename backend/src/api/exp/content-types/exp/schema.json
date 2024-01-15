@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exps",
+  "info": {
+    "singularName": "exp",
+    "pluralName": "exps",
+    "displayName": "exp"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "admin_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::admin-detail.admin-detail",
+      "inversedBy": "exps"
+    }
+  }
+}

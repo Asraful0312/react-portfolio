@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RxCross2 } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
   const links = [
     {
       to: "/",
@@ -33,9 +34,15 @@ const Header = () => {
       <header className="md:w-[80%] 2xl:w-[55%] xl:w-[70%] md:mx-auto md:flex px-10 py-3 md:items-center md:justify-between">
         <div className="flex items-center  sm:justify-between justify-end">
           <div className="hidden sm:block">
-            <Link to="/" className="text-lg md:text-lg lg:text-2xl">
-              ASRAFUL
-            </Link>
+            {location.pathname === "/" ? (
+              <a href="#" className="text-lg md:text-lg lg:text-2xl">
+                ASRAFUL
+              </a>
+            ) : (
+              <Link to="/" className="text-lg md:text-lg lg:text-2xl">
+                ASRAFUL
+              </Link>
+            )}
           </div>
           <div onClick={() => setOpen(!open)} className="text-xl md:hidden">
             {open ? <RxCross2 /> : <AiOutlineMenu />}
@@ -54,16 +61,13 @@ const Header = () => {
                 className={`text-xl md:text-lg lg:text-xl hover:underline hover:text-gray-500 transition-all duration-300 md:flex}`}
               >
                 {link.text === "Home" ? (
-                  <Link to="/">Home</Link>
+                  !(location.pathname === "/") ? (
+                    <Link to="/">Home</Link>
+                  ) : (
+                    <a href="#">{link?.text}</a>
+                  )
                 ) : (
-                  <a
-                    href={link?.to}
-                    className={({ isActive }) =>
-                      isActive ? "text-gray-500" : "text-black"
-                    }
-                  >
-                    {link?.text}
-                  </a>
+                  <a href={link.to}>{link?.text}</a>
                 )}
               </li>
             ))}

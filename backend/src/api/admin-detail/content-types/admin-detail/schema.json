@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "admin_details",
+  "info": {
+    "singularName": "admin-detail",
+    "pluralName": "admin-details",
+    "displayName": "adminDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "dsec": {
+      "type": "text",
+      "required": true
+    },
+    "links": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::link.link",
+      "mappedBy": "admin_details"
+    },
+    "exps": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::exp.exp",
+      "mappedBy": "admin_details"
+    },
+    "edus": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::edu.edu",
+      "mappedBy": "admin_details"
+    },
+    "skill_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill-category.skill-category",
+      "mappedBy": "admin_details"
+    },
+    "cv": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "img2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "languges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::languge.languge",
+      "mappedBy": "admin_details"
+    }
+  }
+}

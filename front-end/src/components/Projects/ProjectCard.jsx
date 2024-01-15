@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
-const ProjectCard = ({ image, description, name, id }) => {
+
+
+const ProjectCard = ({ image, link, name, id }) => {
   return (
     <div className="w-full sm:w-[80%] md:w-[50%] lg:w-[30%] xl:w-[30%] px-4 mb-4">
       <div className="bg-transparent border border-black p-4 rounded-3xl">
@@ -15,7 +17,7 @@ const ProjectCard = ({ image, description, name, id }) => {
           <h1 className="font-semibold text-gray-500 mt-2">{name}</h1>
           <div className="flex items-center gap-5 mt-3">
             <a
-              href="https://github.com/Asraful0312"
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
             >

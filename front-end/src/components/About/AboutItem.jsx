@@ -8,7 +8,7 @@ const AboutItem = ({ icon, title, years, description, edu }) => {
       {edu ? (
         <h1 className="text-gray-700 text-sm text-center">{edu}</h1>
       ) : (
-        <h1 className="text-gray-700 text-sm text-center">{years}+ years</h1>
+        <h1 className="text-gray-700 text-sm text-center">{years}</h1>
       )}
 
       <h1 className="text-gray-700 text-sm text-center">{description}</h1>

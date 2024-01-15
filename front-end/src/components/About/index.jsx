@@ -1,55 +1,72 @@
 import { GiAchievement } from "react-icons/gi";
 import { IoPeople } from "react-icons/io5";
-import image from "../../assets/man2.jpg";
 import Heading from "../shared/Heading";
 import AboutItem from "./AboutItem";
+import useFetch from "../../hooks/useFetch";
+import { Fragment } from "react";
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+
 
 const About = () => {
+  const { result, loading, error } = useFetch(
+    "GET",
+    `${apiUrl}/api/admin-details?populate=*`
+  );
+
   return (
     <section className="container pb-[80px] md:pb-[150px]">
       <div id="about" className="mt-16 md:w-[90%] md:mx-auto md:mt-0">
         <Heading description="Get To Know More" title="About Me" />
         <div className="flex flex-col md:flex-row items-center gap-10">
-          <div className="w-[300px] md:w-1/3  h-[330px]">
-            <img
-              className="w-full rounded-2xl h-full bg-center object-cover"
-              src={image}
-              alt="man"
-            />
-          </div>
-          <div className="w-[90%] md:w-8/12">
-            <div className="flex flex-col items-center gap-5 md:flex-row">
-              <AboutItem
-                icon={<GiAchievement className="text-2xl" />}
-                title={"Experience"}
-                years={2}
-                description={"Frontend Development"}
-              />
-              <AboutItem
-                icon={<IoPeople className="text-2xl" />}
-                title={"Education"}
-                edu={"HSC"}
-                description={"Higher Secondary School Certificate"}
-              />
-            </div>
-            <h1 className="pt-3 pb-1 text-semibold">Description:</h1>
-            <p className="text-sm text-gray-500">
-              I&rsquo;m a frontend web developer with a solid grasp of
-              JavaScript and hands-on experience with various frontend
-              frameworks and libraries. Currently delving into backend
-              development, I aim to broaden my skill set and create more
-              comprehensive web solutions. Beyond coding, I'm an avid gamer,
-              transforming my free time into thrilling virtual adventures.
-              Whether conquering challenges or immersing myself in captivating
-              narratives, gaming is both a passion and a source of inspiration.
-              In addition, I unwind by watching movies across genres,
-              appreciating diverse storytelling. This multifaceted blend of
-              technical proficiency, gaming enthusiasm, and cinematic
-              appreciation defines my approach to both work and leisure,
-              creating a dynamic balance in my professional and personal
-              pursuits.
-            </p>
-          </div>
+          {loading && <h1>Loading...</h1>}
+          {error && <h1>There was an error</h1>}
+          {!loading &&
+            !error &&
+            result &&
+            result.map((item) => (
+              <Fragment key={item && item?.id}>
+                <div className="w-[300px] md:w-1/3  h-[330px]">
+                  <img
+                    className="w-full rounded-2xl h-full bg-center object-cover"
+                    src={
+                      item &&
+                      apiUrl + item?.attributes?.img2?.data?.attributes?.url
+                    }
+                    alt="man"
+                  />
+                </div>
+                <div className="w-[90%] md:w-8/12">
+                  <div className="flex flex-col items-center gap-5 md:flex-row">
+                    <AboutItem
+                      icon={<GiAchievement className="text-2xl" />}
+                      title={"Exparience"}
+                      years={
+                        item &&
+                        item?.attributes?.exps?.data[0].attributes?.duration
+                      }
+                      description={
+                        item && item?.attributes?.exps?.data[0].attributes?.role
+                      }
+                    />
+                    <AboutItem
+                      icon={<IoPeople className="text-2xl" />}
+                      title={"Education"}
+                      edu={
+                        item &&
+                        item?.attributes?.edus?.data[0].attributes?.duration
+                      }
+                      description={
+                        item && item?.attributes?.edus?.data[0].attributes?.name
+                      }
+                    />
+                  </div>
+                  <h1 className="pt-3 pb-1 text-semibold">Description:</h1>
+                  <p className="text-sm text-gray-500">
+                    {item && item?.attributes?.dsec}
+                  </p>
+                </div>
+              </Fragment>
+            ))}
         </div>
       </div>
     </section>

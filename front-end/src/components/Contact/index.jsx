@@ -1,8 +1,17 @@
 import { useState } from "react";
 import Heading from "../shared/Heading";
 import { TextAreaComponent } from "./Textarea";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
+const apiKey = import.meta.env.VITE_REACT_APP_API_TOKEN;
 
 const links = [
+  {
+    to: "",
+    text: "Home",
+  },
   {
     to: "#about",
     text: "About",
@@ -29,15 +38,46 @@ const Contact = () => {
   });
 
   const handlChange = (e) => {
-    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("hello");
-  }
-
+    setUserData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
   console.log(userData);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const options = {
+        method: "POST",
+        url: `${apiUrl}/api/contacts`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        data: {
+          data: userData,
+        },
+      };
+      const response = await axios.request(options);
+      console.log("Contact form submitted:", response.data);
+      toast.success('Contact Message Sent!');
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Server responded with:", error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("No response received from server");
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error setting up the request:", error.message);
+      }
+
+      // Handle error
+    }
+  };
 
   return (
     <section className="flex items-center pb-11 justify-center">
@@ -71,17 +111,21 @@ const Contact = () => {
           </div>
         </form>
         <footer className="w-[80%] mx-auto mt-[80px] md:mt-[100px] flex flex-col gap-3 lg:mt-[120px] xl:mt-[160px]">
-          <ul
-            className={`flex flex-wrap items-center justify-center gap-3`}
-          >
+          <ul className={`flex flex-wrap items-center justify-center gap-3`}>
             {links.map((link) => (
-              <li key={link.to}>
-                <a
-                  className="text-lg md:text-xl hover:underline hover:text-gray-500 transition-all duration-300"
-                  href={`${link?.to}`}
-                >
-                  {link?.text}
-                </a>
+              <li
+                key={link.text}
+                className={`text-xl md:text-lg lg:text-xl hover:underline hover:text-gray-500 transition-all duration-300 md:flex}`}
+              >
+                {link.text === "Home" ? (
+                  !(location.pathname === "/") ? (
+                    <Link to="/">Home</Link>
+                  ) : (
+                    <a href="#">{link?.text}</a>
+                  )
+                ) : (
+                  <a href={link.to}>{link?.text}</a>
+                )}
               </li>
             ))}
           </ul>

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "edus",
+  "info": {
+    "singularName": "edu",
+    "pluralName": "edus",
+    "displayName": "edu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "admin_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::admin-detail.admin-detail",
+      "inversedBy": "edus"
+    }
+  }
+}
