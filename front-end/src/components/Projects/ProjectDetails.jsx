@@ -26,7 +26,7 @@ const ProjectDetails = () => {
               controls
               url={
                 result &&
-                apiUrl + result?.attributes?.video?.data[0]?.attributes?.url
+                result?.attributes?.video?.data[0]?.attributes?.url
               }
               height={"70%"}
               width={"100%"}
@@ -36,7 +36,7 @@ const ProjectDetails = () => {
               className="w-full"
               src={
                 result &&
-                apiUrl + result?.attributes?.img?.data[0]?.attributes?.url
+                result?.attributes?.img?.data[0]?.attributes?.url
               }
               alt="banner"
             />

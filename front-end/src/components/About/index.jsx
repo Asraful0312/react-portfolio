@@ -30,7 +30,7 @@ const About = () => {
                     className="w-full rounded-2xl h-full bg-center object-cover"
                     src={
                       item &&
-                      apiUrl + item?.attributes?.img2?.data?.attributes?.url
+                      item?.attributes?.img2?.data?.attributes?.url
                     }
                     alt="man"
                   />

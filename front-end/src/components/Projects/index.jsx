@@ -22,7 +22,7 @@ const Projects = () => {
                 name={item && item?.attributes?.title}
                 image={
                   item &&
-                  apiUrl + item?.attributes?.img?.data[0]?.attributes?.url
+                  item?.attributes?.img?.data[0]?.attributes?.url
                 }
                 link={item && item?.attributes?.github}
                 id={item && item?.id}

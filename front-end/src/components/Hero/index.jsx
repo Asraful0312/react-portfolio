@@ -24,10 +24,7 @@ const Hero = () => {
               <Fragment key={item.id}>
                 <div className="w-[300px] xl:w-[450px] xl:h-[450px] h-[300px] overflow-hidden rounded-full shadow-sm">
                   <img
-                    src={
-                      item &&
-                      apiUrl + item?.attributes?.img?.data?.attributes?.url
-                    }
+                    src={item && item?.attributes?.img?.data?.attributes?.url}
                     className="object-cover w-full h-full"
                     alt="user"
                   />
@@ -42,6 +39,7 @@ const Hero = () => {
                   </h1>
                   <DownloadButton
                     download
+                    cv={item && item?.attributes?.cv?.data[0]?.attributes?.url}
                     text="Download CV"
                     text2="Contact Me"
                   />

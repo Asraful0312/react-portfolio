@@ -1,7 +1,7 @@
 const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
-const DownloadButton = ({ download, text, text2 }) => {
-  const CV_URL = `${apiUrl}/uploads/cv_1_M5_D98_MJ_9607ff0352.pdf`;
+const DownloadButton = ({ cv, download, text, text2 }) => {
+  const CV_URL = cv;
   const handleDownload = (url) => {
     const downloadLink = document.createElement("a");
     downloadLink.href = url; // Adjust the path accordingly
