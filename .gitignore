@@ -1,2 +1,4 @@
-config.bat
 node_modules
+.testdriver
+test-results
+config.bat
